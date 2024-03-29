@@ -143,6 +143,8 @@ void (*comparing_with_instruction(char *_1_tok))(stack_t **, unsigned int)
 		{"add", add_nodes},
 		{"sub", sub_nodes},
 		{"div", div_nodes},
+		{"mul", mul_nodes},
+		{"mod", mod_nodes},
 		{NULL, NULL}};
 
 	while (array_of_instr_funcs[i].opcode != NULL)
