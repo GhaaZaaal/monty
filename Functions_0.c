@@ -78,7 +78,6 @@ void pop_stack(stack_t **stack, unsigned int line_number)
 	free(*stack);
 	*stack = temp;
 }
-
 /**
  * check_if_spaces - function to check if a string is only spaces
  *

@@ -22,7 +22,6 @@ void add_to_stack(stack_t **head, int value)
 	temp->n = value;
 	*head = temp;
 }
-
 /**
  * create_1_node_stack - create a new node stack at the beginning
  *
@@ -46,7 +45,6 @@ stack_t *create_1_node_stack(int n)
 
 	return (temp);
 }
-
 /**
  * line_ops - function that takes the line from the file and parse it
  *
@@ -97,7 +95,6 @@ void line_ops(char *line, unsigned int line_number, stack_t **head)
 	}
 	free(tmp);
 }
-
 /**
  * open_file - open a file and take line by line
  *
@@ -127,7 +124,6 @@ int open_file(char *filename)
 	fclose(fd);
 	return (0);
 }
-
 /**
  * comparing_with_instruction - compare the given instruction in the file
  *
@@ -141,6 +137,8 @@ void (*comparing_with_instruction(char *_1_tok))(stack_t **, unsigned int)
 	instruction_t array_of_instr_funcs[] = {
 		{"pop", pop_stack},
 		{"pall", print_stack},
+		{"pint", print_top},
+		{"swap", swap_nodes},
 		{NULL, NULL}};
 
 	while (array_of_instr_funcs[i].opcode != NULL)
