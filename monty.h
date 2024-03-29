@@ -61,5 +61,7 @@ void mul_nodes(stack_t **stack, unsigned int line_number);
 void mod_nodes(stack_t **stack, unsigned int line_number);
 void print_char(stack_t **stack, unsigned int line_number);
 void print_str(stack_t **stack, unsigned int line_number);
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */

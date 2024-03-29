@@ -147,6 +147,8 @@ void (*comparing_with_instruction(char *_1_tok))(stack_t **, unsigned int)
 		{"mod", mod_nodes},
 		{"pchar", print_char},
 		{"pstr", print_str},
+		{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL}};
 
 	while (array_of_instr_funcs[i].opcode != NULL)
