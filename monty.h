@@ -53,5 +53,7 @@ stack_t *create_1_node_stack(int n);
 void add_to_stack(stack_t **head, int value);
 void print_top(stack_t **stack, unsigned int line_number);
 void swap_nodes(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void add_nodes(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */
