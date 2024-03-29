@@ -58,10 +58,15 @@ void line_ops(char *line, unsigned int line_number, stack_t **head)
 {
 	char *tmp = NULL;
 	void (*f)(stack_t **stack, unsigned int line_number);
+	static int first_op = 1;
 
 	if (line_number == 0)
 	{
 		free_nodes(head);
+		return;
+	}
+	if (line[0] == '\n' || check_if_spaces(line))
+	{
 		return;
 	}
 	tmp = _strCopy(strtok(line, " \n"));
@@ -70,15 +75,18 @@ void line_ops(char *line, unsigned int line_number, stack_t **head)
 		free(tmp);
 		tmp = NULL;
 		tmp = _strCopy(strtok(NULL, " \n"));
-		if (atoi(tmp) == 0)
+		if (atoi(tmp) == 0 && tmp[0] != '0')
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			free_nodes(head);
 			free(tmp);
 			exit(EXIT_FAILURE);
 		}
-		if (line_number == 1)
+		if (first_op == 1)
+		{
 			*head = create_1_node_stack(atoi(tmp));
+			first_op++;
+		}
 		else
 			add_to_stack(head, atoi(tmp));
 	}

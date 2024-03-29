@@ -45,6 +45,7 @@ void free_nodes(stack_t **stack);
 char *_strCopy(char *s);
 void print_stack(stack_t **head, unsigned int line_number);
 void pop_stack(stack_t **stack, unsigned int line_number);
+int check_if_spaces(char *cmd_line);
 int open_file(char *filename);
 void line_ops(char *line, unsigned int line_number, stack_t **head);
 void (*comparing_with_instruction(char *_1_tok))(stack_t **, unsigned int);

@@ -78,3 +78,32 @@ void pop_stack(stack_t **stack, unsigned int line_number)
 	free(*stack);
 	*stack = temp;
 }
+
+/**
+ * check_if_spaces - function to check if a string is only spaces
+ *
+ * @cmd_line: the command line entered by the user
+ *
+ * Return: if the string is only spaces -1, otherwise 0
+ */
+int check_if_spaces(char *cmd_line)
+{
+	int i = 0;
+	int x = 0;
+
+	x = strlen(cmd_line);
+	while (*cmd_line != '\0')
+	{
+		if (strncmp(cmd_line++, " ", 1) == 0)
+		{
+			i++;
+		}
+	}
+	i++;
+	if (i == x)
+	{
+		return (1);
+	}
+	else
+		return (0);
+}
